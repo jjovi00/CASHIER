@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UPRAK - Cashier</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- CSS proyek -->
+<link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body class="bg-light">
+
+<div class="container py-4">
+
+<div id="kasirPage">
+
+  <div class="card p-4 shadow-sm auth-card">
+
+    <h4 class="fw-bold mb-3 text-center">💳 Cashier & Payment</h4>
+
+    <!-- INPUT BARANG -->
+    <input id="namaBarang" class="form-control mb-2" placeholder="Product Name">
+    <input id="hargaBarang" type="number" class="form-control mb-2" placeholder="Price">
+    <input id="jumlahBarang" type="number" class="form-control mb-2" placeholder="Quantity">
+
+    <button class="btn btn-primary w-100 mb-3" onclick="tambah()">Add Item</button>
+
+    <!-- LIST BELANJA -->
+    <table class="table table-sm table-bordered">
+      <tbody id="list"></tbody>
+    </table>
+
+    <!-- TOTAL -->
+    <h5 id="total" class="fw-bold text-end">Total: Rp 0</h5>
+
+    <!-- METODE BAYAR -->
+    <select id="metodeBayar" class="form-select mt-2" onchange="pilihMetode()">
+      <option value="">Select Payment Method</option>
+      <option>Cash</option>
+      <option>QRIS</option>
+      <option>Debit Card</option>
+    </select>
+
+    <!-- TUNAI -->
+    <div id="tunaiBox" class="d-none mt-2">
+      <input id="uangBayar" class="form-control mb-1" placeholder="Amount Paid">
+      <small>Change: <span id="kembalian">0</span></small>
+    </div>
+
+    <!-- ACTION -->
+    <button class="btn btn-success w-100 mt-3" onclick="cetak()">Print Receipt</button>
+
+    <a href="../dashboard.html" class="btn btn-secondary w-100 mt-2">⬅ Back to Dashboard</a>
+
+  </div>
+
+</div>
+
+</div>
+
+<!-- Proteksi login -->
+<script>
+if (!localStorage.getItem("role")) {
+    window.location.href = "../login.html";
+}
+</script>
+
+</body>
+</html>
