@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>MirrorMoodie</title>
+</head>
+<body>
+   <div id="previewBarang" class="card p-3 mb-3 d-none">
+    <h6>Hasil Scan</h6>
+    <p><b>Barcode:</b> <span id="pBarcode"></span></p>
+    <p><b>Nama:</b> <span id="pNama"></span></p>
+    <p><b>Harga:</b> Rp <span id="pHarga"></span></p>
+    <button class="btn btn-success btn-sm" onclick="isiDariScan()">Tambah</button>
+  </div>
+
+  <input id="namaBarang" class="form-control mb-2" placeholder="Nama Barang">
+  <input id="hargaBarang" class="form-control mb-2" placeholder="Harga">
+  <input id="jumlahBarang" class="form-control mb-2" placeholder="Jumlah">
+  <button class="btn btn-pink mb-3" onclick="tambah()">Tambah Manual</button>
+
+  <table class="table">
+    <thead><tr><th>Barang</th><th>Total</th></tr></thead>
+    <tbody id="list"></tbody>
+  </table>
+
+  <h5 id="total">Total: Rp 0</h5>
+</body>
+</html>
